@@ -5,15 +5,27 @@ const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".close-modal");
 const btnOpenModal = document.querySelectorAll(".show-modal");
 
+//! function for opening the modal
+const openModal = function () {
+  console.log("button clicked");
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+//!openModal function called here
 for (let i = 0; i < btnOpenModal.length; i++) {
-  btnOpenModal[i].addEventListener("click", function () {
-    // document.querySelector(".hidden").style.display = "block";
-
-    modal.classList.remove("hidden");
-
-    overlay.classList.remove("hidden");
-  });
+  btnOpenModal[i].addEventListener("click", openModal);
 }
+
+//! another  best way to close modal by jonas you can use this too
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+//!  closeModal function called here
+overlay.addEventListener("click", closeModal);
+btnCloseModal.addEventListener("click", closeModal);
 
 //* long way to close the modal
 // document.querySelector(".close-modal").addEventListener("click", function () {
@@ -36,7 +48,7 @@ for (let i = 0; i < btnOpenModal.length; i++) {
 //   overlay.classList.add("hidden");
 // });
 
-//! best way to close
+//! best way to close by me
 
 //? IN THIS I HAVE CREATED A FUNCTION  IN WHICH BY GIVING ANY ARUGEMENT EX.("closeModal(overlay);") THE MODAL WIIL CLOSE
 
@@ -50,13 +62,3 @@ for (let i = 0; i < btnOpenModal.length; i++) {
 
 // closeModal(overlay);
 // closeModal(btnCloseModal);
-
-//! another  best way by jonas you can use this too
-
-const closeModal = function () {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-};
-
-overlay.addEventListener("click", closeModal);
-btnCloseModal.addEventListener("click", closeModal);
