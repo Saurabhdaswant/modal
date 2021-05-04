@@ -8,6 +8,7 @@ const btnOpenModal = document.querySelectorAll(".show-modal");
 //! function for opening the modal
 const openModal = function () {
   console.log("button clicked");
+  //* here we have removed the class hidden  which means deactivating the class
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
 };
@@ -19,6 +20,7 @@ for (let i = 0; i < btnOpenModal.length; i++) {
 
 //! another  best way to close modal by jonas you can use this too
 const closeModal = function () {
+  //* here we have added the again class  hidden  which means activating the class again as normally
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
 };
